@@ -1,0 +1,103 @@
+{
+ "doctype": "DocType",
+ "name": "ShipKia Insights Deployment",
+ "module": "Shipkia Insights",
+ "autoname": "field:profile",
+ "engine": "InnoDB",
+ "field_order": [
+  "profile",
+  "environment",
+  "crm_source",
+  "application_source",
+  "billing_source",
+  "account_connection",
+  "enabled",
+  "workbook",
+  "source_fingerprints",
+  "last_refresh",
+  "last_error"
+ ],
+ "fields": [
+  {
+   "fieldname": "profile",
+   "label": "Profile",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "environment",
+   "label": "Environment",
+   "fieldtype": "Select",
+   "options": "Testing\nProduction",
+   "reqd": 1
+  },
+  {
+   "fieldname": "crm_source",
+   "label": "CRM Data Source",
+   "fieldtype": "Link",
+   "options": "Insights Data Source v3",
+   "reqd": 1
+  },
+  {
+   "fieldname": "application_source",
+   "label": "Application Data Source",
+   "fieldtype": "Link",
+   "options": "Insights Data Source v3",
+   "reqd": 1
+  },
+  {
+   "fieldname": "billing_source",
+   "label": "Billing Data Source",
+   "fieldtype": "Link",
+   "options": "Insights Data Source v3"
+  },
+  {
+   "fieldname": "account_connection",
+   "label": "CRM ShipKia Connection",
+   "fieldtype": "Link",
+   "options": "ShipKia API Connection"
+  },
+  {
+   "fieldname": "enabled",
+   "label": "Automatic Refresh",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "workbook",
+   "label": "Workbook",
+   "fieldtype": "Link",
+   "options": "Insights Workbook",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_fingerprints",
+   "label": "Source Fingerprints",
+   "fieldtype": "Code",
+   "options": "JSON",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "last_refresh",
+   "label": "Last Refresh Requested",
+   "fieldtype": "Datetime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_error",
+   "label": "Refresh Error",
+   "fieldtype": "Small Text",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1
+  }
+ ],
+ "track_changes": 1
+}

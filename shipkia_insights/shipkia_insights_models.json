@@ -1,0 +1,214 @@
+{
+  "leads": {
+    "source": "crm",
+    "table": "tabLead",
+    "key": "name",
+    "cursor": "modified",
+    "columns": [
+      "name",
+      "creation",
+      "modified",
+      "lead_name",
+      "lead_owner",
+      "status",
+      "source",
+      "source_medium",
+      "source_campaign_name",
+      "company_name",
+      "shipkia_cust_id",
+      "shipkia_connection",
+      "shipkia_onboarding_status"
+    ]
+  },
+  "crm_customers": {
+    "source": "crm",
+    "table": "tabCustomer",
+    "key": "name",
+    "cursor": "modified",
+    "columns": [
+      "name",
+      "creation",
+      "modified",
+      "customer_name",
+      "customer_group",
+      "territory",
+      "shipkia_cust_id",
+      "shipkia_connection",
+      "shipkia_onboarding_status"
+    ]
+  },
+  "accounts": {
+    "source": "application",
+    "table": "customers",
+    "key": "id",
+    "cursor": "updated_at",
+    "columns": [
+      "id",
+      "created_at",
+      "updated_at",
+      "company_name",
+      "lead_source",
+      "country",
+      "currency",
+      "is_active"
+    ]
+  },
+  "orders": {
+    "source": "application",
+    "table": "order_details",
+    "key": "id",
+    "cursor": "updated_at",
+    "columns": [
+      "id",
+      "customer_id",
+      "created_at",
+      "updated_at",
+      "stage",
+      "status",
+      "courier_partner",
+      "order_channel",
+      "payment_method",
+      "total_order_value",
+      "shipping_charge",
+      "pickup_date",
+      "delivered_date"
+    ]
+  },
+  "wallets": {
+    "source": "application",
+    "table": "wallet",
+    "key": "id",
+    "cursor": "updated_at",
+    "columns": [
+      "id",
+      "customer_id",
+      "created_at",
+      "updated_at",
+      "balance",
+      "currency"
+    ]
+  },
+  "wallet_transactions": {
+    "source": "application",
+    "table": "wallet_transactions",
+    "key": "id",
+    "cursor": "updated_at",
+    "columns": [
+      "id",
+      "customer_id",
+      "wallet_id",
+      "created_at",
+      "updated_at",
+      "amount",
+      "chargeable_amount",
+      "tax_amount",
+      "type",
+      "category",
+      "reference_type"
+    ]
+  },
+  "recharges": {
+    "source": "application",
+    "table": "wallet_recharge",
+    "key": "razorpay_order_id",
+    "cursor": "updated_at",
+    "columns": [
+      "razorpay_order_id",
+      "customer_id",
+      "created_at",
+      "updated_at",
+      "amount",
+      "status",
+      "credited"
+    ]
+  },
+  "support": {
+    "source": "application",
+    "table": "support_tickets",
+    "key": "id",
+    "cursor": "updated_at",
+    "columns": [
+      "id",
+      "customer_id",
+      "created_at",
+      "updated_at",
+      "issue_type",
+      "stage",
+      "courier_partner",
+      "automation_status",
+      "created_by",
+      "updated_by"
+    ]
+  },
+  "comments": {
+    "source": "application",
+    "table": "ticket_comments",
+    "key": "id",
+    "cursor": "created_at",
+    "columns": [
+      "id",
+      "ticket_id",
+      "created_at",
+      "status",
+      "type",
+      "created_by"
+    ]
+  },
+  "stores": {
+    "source": "application",
+    "table": "merchant_store_link",
+    "key": "id",
+    "cursor": "updated_at",
+    "columns": [
+      "id",
+      "customer_id",
+      "created_at",
+      "updated_at",
+      "platform",
+      "status"
+    ]
+  },
+  "invoices": {
+    "source": "billing",
+    "table": "tabSales Invoice",
+    "key": "name",
+    "cursor": "modified",
+    "columns": [
+      "name",
+      "creation",
+      "modified",
+      "posting_date",
+      "customer",
+      "company",
+      "currency",
+      "docstatus",
+      "is_return",
+      "base_net_total",
+      "base_grand_total",
+      "outstanding_amount",
+      "due_date",
+      "status"
+    ]
+  },
+  "payments": {
+    "source": "billing",
+    "table": "tabPayment Entry",
+    "key": "name",
+    "cursor": "modified",
+    "columns": [
+      "name",
+      "creation",
+      "modified",
+      "posting_date",
+      "company",
+      "party",
+      "party_type",
+      "payment_type",
+      "docstatus",
+      "paid_amount",
+      "received_amount",
+      "paid_from_account_currency",
+      "paid_to_account_currency"
+    ]
+  }
+}
