@@ -3,6 +3,16 @@
 Portable reporting profiles, models, Marketing/Sales KPIs, dashboards and
 incremental warehouse imports. Requires ERPNext, Insights and shipkia_lead.
 
+Use Frappe/ERPNext v15 and Insights v3. The Cloud compatibility declaration
+includes Frappe 15.120.0. A clean site with Frappe 15.116.0, ERPNext 15.118.0,
+Insights 3.12.2 and only the two ShipKia apps passed installation, migration,
+repeated setup and 87 combined tests on 2026-09-09. Runtime execution on
+15.120.0 is not covered by that local run.
+
+`test_installation` checks reporting columns, deployment links and registration
+of the warehouse importer override. Fresh sites safely have no scheduled
+reporting work until data sources and deployment profiles are configured.
+
 Install using `bench --site SITE install-app shipkia_insights`, then restart the
 web, scheduler and worker processes so they load the new Python package.
 The existing ShipKia Insights Deployment DocType remains unchanged in name and
